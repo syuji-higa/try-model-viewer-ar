@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer
+    src="model.gltf"
+    ios-src="model.usdz"
+    alt="A 3D model of an astronaut"
+    background-color="#334"
+    style="width: 100%; height: 100%;"
+    ar
+    ar-scale="auto"
+    auto-rotate
+    camera-controls
+    magic-leap
+    interaction-prompt-style
+    unstable-webxr>
+  </model-viewer>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script>
+    const $modelViewer = document.getElementsByTagName('model-viewer')[0]
+    $modelViewer.addEventListener('load', (e) => {
+      console.log('loaded');
+    })
+  </script>
+</body>
+</html>
